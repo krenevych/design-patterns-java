@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Student {
 
-    private final Map<String, Course.Level> skills = new HashMap();
+    private final Map<String, Course.Level> skills = new HashMap<>();
 
     public boolean remember(String knowledge, Course.Level level)
     {

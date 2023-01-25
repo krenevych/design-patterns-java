@@ -4,10 +4,16 @@ public class Car extends Vehicle {
     final private static int numberOfWheels = 4;
     final private Engine engine;
 
+    private Wheel wheel;
+
     public Car(String model) {
         this.hasWheels = true;
         this.model = model;
         this.engine = new Engine(360);
+    }
+
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
     }
 
     @Override
