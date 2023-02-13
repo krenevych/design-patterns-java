@@ -1,5 +1,5 @@
-public class Mazda implements Car {
-    @Override
+public class Mazda {
+
     public void run() {
         System.out.println("run: Mazda");
     }
