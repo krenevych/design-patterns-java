@@ -2,17 +2,17 @@ import java.util.ArrayList;
 
 public class AutoPark {
 
-    private final ArrayList<Mazda> autos = new ArrayList<>();
+    private final ArrayList<Car> autos = new ArrayList<>();
 
-    public void createAutoPark(int n){
+    public void createAutoPark(int n, CarFactory factory){
         for (int i = 0; i < n; ++i){
-            Mazda car = new Mazda();
+            Car car = factory.createCar();
             autos.add(car);
         }
     }
 
     public void run(){
-        for (Mazda car : autos) {
+        for (Car car : autos) {
             car.run();
         }
     }
