@@ -1,13 +1,14 @@
-public class Truck {
-    final private float costTonnPerKm;
+public class Truck implements Transport {
+    final private float deliveryTariff;
 
-    public Truck(float costTonnPerKm) {
-        this.costTonnPerKm = costTonnPerKm;
+    public Truck(float deliveryTariff) {
+        this.deliveryTariff = deliveryTariff;
     }
 
-    public float deliverByRoad(int distance, int cargo){
+    @Override
+    public float deliver(int distance, int cargo){
         System.out.println("Delivery by road");
-        return distance * cargo * costTonnPerKm;
+        return distance * cargo * deliveryTariff;
     }
 
 

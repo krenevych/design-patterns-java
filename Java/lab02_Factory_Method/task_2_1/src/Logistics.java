@@ -1,6 +1,6 @@
-public class Logistics {
+abstract public class Logistics {
 
-    private float deliveryTariff;  // Тариф на доставку вантажів
+    protected float deliveryTariff;  // Тариф на доставку вантажів
 
     public Logistics() {
     }
@@ -9,10 +9,11 @@ public class Logistics {
         this.deliveryTariff = deliveryTariff;
     }
 
-    public void planDelivery(int distance, int cargo) {
-        Truck truck = new Truck(deliveryTariff);
+    abstract Transport createTransport();
 
-        float totalCost = truck.deliverByRoad(distance, cargo);
+    public void planDelivery(int distance, int cargo) {
+        Transport transport = createTransport();
+        float totalCost = transport.deliver(distance, cargo);
         System.out.println("Delivery cost is " + totalCost);
     }
 }
