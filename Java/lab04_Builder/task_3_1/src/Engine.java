@@ -1,14 +1,14 @@
 public class Engine {
-    public enum Fuel {
-        Petrol,
-        Diesel,
-        Electric
+    public enum Fuel {  // Тип пального
+        Petrol,    // Бензин
+        Diesel,    // Дізель
+        Electric   // Електрика
     }
 
-    final int power;
-    final int torque;
-    final Fuel fuel;
-    final float volume;
+    final int power;     //  Потужність
+    final int torque;    //  Крутний момент
+    final Fuel fuel;     //  Вид пального
+    final float volume;  //  Об'єм двигуна
 
     public Engine(int power, int torque, Fuel fuel, float volume) {
         this.power = power;

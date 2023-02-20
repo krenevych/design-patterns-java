@@ -1,16 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        CarBuilder carBuilder = new CarBuilder();
-
-        CarDirector director = new CarDirector();
-        director.setCarBuilder(carBuilder);
-
-        Car car = director.makeDefaultCar();
-        Car sportCar = director.makeSportCar();
-        Car suv = director.makeSUV();
+        Engine engine = new Engine(105, 140, Engine.Fuel.Petrol, 1.4f);
+        Wheel wheel = new Wheel(Wheel.Material.Steel, 14);
+        Car car = new Car(Car.Type.Sedan, Car.CarColor.White, engine, wheel);
 
         System.out.println(car);
-        System.out.println(sportCar);
-        System.out.println(suv);
     }
 }

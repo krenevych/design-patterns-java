@@ -1,21 +1,21 @@
 public class Car {
-    public enum CarColor {
-        White,
-        Black,
-        Red,
-        Grey
+    public enum CarColor {   // Колір автомобіля
+        White,  //  Білий
+        Black,  //  Чорний
+        Red,    //  Червоний
+        Grey    //  Сірий
     }
 
-    public enum Type {
-        Sedan,
-        Hatchback,
-        SUV
+    public enum Type {  //  Тип кузову автомобіля
+        Sedan,      //  Седан
+        Hatchback,  //  Хетчбек
+        SUV         //  Кросовер
     }
 
-    final private Type type;
-    final private CarColor carColor;
-    final private Engine engine;
-    final private Wheel wheel;
+    final private Type type;          //  Тип кузову
+    final private CarColor carColor;  //  Колір
+    final private Engine engine;      //  Двигун
+    final private Wheel wheel;        //  Колеса
 
     public Car(Type type, CarColor carColor,
                Engine engine, Wheel wheel) {
