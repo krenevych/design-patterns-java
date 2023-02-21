@@ -5,12 +5,15 @@ import java.util.List;
 public class Pizza  // Піца
         implements Valuable {
 
-    public Pizza(Dough dough,
+    public Pizza(String name,
+                 Dough dough,
                  Topping... additivesList) {
+        this.name = name;
         this.dough = dough;
         toppings.addAll(Arrays.asList(additivesList));
     }
 
+    private final String name;
     private final Dough dough;  //  Тісто
 
     private final List<Topping> toppings = new ArrayList<>();  // Добавки
@@ -26,7 +29,8 @@ public class Pizza  // Піца
 
     @Override
     public String toString() {
-        return "Pizza{" +
+        return "Pizza " + name +
+              " {" +
                 "\ndough = " + dough +
                 ",\nadditives = " + toppings +
                 ",\ncost = " + getCost() + " Hrn" +
