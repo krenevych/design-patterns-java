@@ -13,6 +13,14 @@ public class Pizza  // Піца
         toppings.addAll(Arrays.asList(additivesList));
     }
 
+    public Pizza(String name,
+                 Dough dough,
+                 List<Topping> additivesList) {
+        this.name = name;
+        this.dough = dough;
+        toppings.addAll(additivesList);
+    }
+
     private final String name;
     private final Dough dough;  //  Тісто
 
