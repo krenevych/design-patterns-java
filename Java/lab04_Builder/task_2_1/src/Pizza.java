@@ -6,20 +6,20 @@ public class Pizza  // Піца
         implements Valuable {
 
     public Pizza(Dough dough,
-                 Additive... additivesList) {
+                 Topping... additivesList) {
         this.dough = dough;
-        additives.addAll(Arrays.asList(additivesList));
+        toppings.addAll(Arrays.asList(additivesList));
     }
 
     private final Dough dough;  //  Тісто
 
-    private final List<Additive> additives = new ArrayList<>();  // Добавки
+    private final List<Topping> toppings = new ArrayList<>();  // Добавки
 
     @Override
     public int getCost() {  // Вартість піци
         int totalCost = dough.getCost();
-        for (Additive additive : additives) {
-            totalCost += additive.getCost();
+        for (Topping topping : toppings) {
+            totalCost += topping.getCost();
         }
         return totalCost;
     }
@@ -28,7 +28,7 @@ public class Pizza  // Піца
     public String toString() {
         return "Pizza{" +
                 "\ndough = " + dough +
-                ",\nadditives = " + additives +
+                ",\nadditives = " + toppings +
                 ",\ncost = " + getCost() + " Hrn" +
                 "\n}";
     }
