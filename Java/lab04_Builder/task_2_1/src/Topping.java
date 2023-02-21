@@ -26,9 +26,9 @@ public class Topping  // Добавки (начинка) - сир, оливки,
 
     @Override
     public String toString() {
-        return "Additive{" +
-                "additive=" + toppingType +
-                ", additiveName='" + toppingName + '\'' +
+        return "Topping{" +
+                "toppingType=" + toppingType +
+                ", toppingName='" + toppingName + '\'' +
                 ", cost=" + cost +
                 '}';
     }

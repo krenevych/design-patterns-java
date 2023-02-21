@@ -8,9 +8,16 @@ public class Pizza  // Піца
     public Pizza(String name,
                  Dough dough,
                  Topping... additivesList) {
+        this(name, dough, Arrays.asList(additivesList));
+    }
+
+
+    public Pizza(String name,
+                 Dough dough,
+                 List<Topping> additivesList) {
         this.name = name;
         this.dough = dough;
-        toppings.addAll(Arrays.asList(additivesList));
+        toppings.addAll(additivesList);
     }
 
     private final String name;
@@ -32,7 +39,7 @@ public class Pizza  // Піца
         return "Pizza " + name +
               " {" +
                 "\ndough = " + dough +
-                ",\nadditives = " + toppings +
+                ",\ntoppings = " + toppings +
                 ",\ncost = " + getCost() + " Hrn" +
                 "\n}";
     }
