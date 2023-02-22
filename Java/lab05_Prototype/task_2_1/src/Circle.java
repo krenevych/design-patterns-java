@@ -5,5 +5,12 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    private int radius;
+    private final int radius;
+
+    @Override
+    public String toString() {
+        return "Circle " + super.toString() + " {" +
+                "radius=" + radius +
+                '}';
+    }
 }

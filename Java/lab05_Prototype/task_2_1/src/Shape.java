@@ -1,7 +1,7 @@
 abstract public class Shape {
-    private int x;
-    private int y;
-    private String color;
+    private final int x;
+    private final int y;
+    private final String color;
 
     public Shape(int x, int y, String color) {
         this.x = x;
@@ -10,4 +10,12 @@ abstract public class Shape {
     }
 
 
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "x=" + x +
+                ", y=" + y +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
