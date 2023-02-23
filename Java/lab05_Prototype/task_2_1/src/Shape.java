@@ -1,4 +1,4 @@
-abstract public class Shape {
+abstract public class Shape implements Cloneable{
     private final int x;
     private final int y;
     private final String color;
@@ -9,6 +9,11 @@ abstract public class Shape {
         this.color = color;
     }
 
+    public Shape(Shape other) {
+        this.x = other.x;
+        this.y = other.y;
+        this.color = other.color;
+    }
 
     @Override
     public String toString() {
@@ -18,4 +23,7 @@ abstract public class Shape {
                 ", color='" + color + '\'' +
                 '}';
     }
+
+    @Override
+    public abstract Shape clone();
 }

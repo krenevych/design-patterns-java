@@ -5,6 +5,11 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
+    public Circle(Circle other) {
+        super(other);
+        this.radius = other.radius;
+    }
+
     private final int radius;
 
     @Override
@@ -12,5 +17,10 @@ public class Circle extends Shape {
         return "Circle " + super.toString() + " {" +
                 "radius=" + radius +
                 '}';
+    }
+
+    @Override
+    public Circle clone() {
+        return new Circle(this);
     }
 }

@@ -14,15 +14,15 @@ public class Main {
 
 // TODO: implement corresponding pattern to run following code
 
-//        List<Shape> shapesCopy = new ArrayList<>();
-//        for (Shape shape : shapes) {
-//            shapesCopy.add(shape.clone());
-//        }
-//
-//        System.out.println("==== Copies ====");
-//        for (Shape shape : shapesCopy) {
-//            System.out.println(shape);
-//        }
+        List<Shape> shapesCopy = new ArrayList<>();
+        for (Shape shape : shapes) {
+            shapesCopy.add(shape.clone());
+        }
+
+        System.out.println("==== Copies ====");
+        for (Shape shape : shapesCopy) {
+            System.out.println(shape);
+        }
 
     }
 }
