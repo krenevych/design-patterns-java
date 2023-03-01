@@ -2,10 +2,10 @@ package com.vehiclecalculator;
 
 public class Vehicle {
 
-    private String model = "default";  // марка автомобіля
-    private int age = 0;               // вік автомобіля в роках
-    private int mileage = 0;           // пробіг автомобіля в милях
-    private float damage = 0;          // ступінь пошкодження автомобіля: 0 - без пошкоджено,
+    private String model;              // марка автомобіля
+    private final int age;             // вік автомобіля в роках
+    private final int mileage;         // пробіг автомобіля в милях
+    private final float damage;        // ступінь пошкодження автомобіля: 0 - без пошкоджено,
                                        // 1 - максимальне пошкодження, не підлягає ремону
 
     public Vehicle(int age, String model, float damage, int mileage) {

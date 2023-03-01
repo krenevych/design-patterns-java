@@ -4,11 +4,20 @@ import com.mobile.Legacy.MobilePhone;
 public class Main {
 
     public static void main(String[] args) {
-        SamsungS22 samsungS22 = new SamsungS22();
-        samsungS22.makeCall();
+        Charger charger = new Charger(5.0f, 1.0f);
 
+        System.out.println("\n============= MicroUsb ==============\n");
+        MobilePhone phone = new MobilePhone();
+        phone.charge(20);
+        phone.pluginCharger(charger);
+        phone.charge(20);
+        System.out.printf("Current power status = %s%n", phone.getChargingPercent());
+
+        System.out.println("\n============= Type-C ==============\n");
         FastCharge fastCharge = new FastCharge(18);
 
+        SamsungS22 samsungS22 = new SamsungS22();
+        samsungS22.makeCall();
         samsungS22.pluginCharger(fastCharge);
         samsungS22.charge(30);
         printBatteryStatus(samsungS22);
@@ -18,24 +27,21 @@ public class Main {
         samsungS22.charge(10);
         printBatteryStatus(samsungS22);
 
-        Charger charger = new Charger(5.0f, 1.0f);
-        AdapterMicroUsbToTypeC adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeC(charger);
 
-        System.out.println("Charging throughout first adapter");
-        samsungS22.pluginCharger(adapterMicroUsbToTypeC);
-        samsungS22.charge(10);
-        printBatteryStatus(samsungS22);
 
-        System.out.println("Maintaining legacy charging");
+//        TODO: implement and use adapter USB => Type-C
+//        AdapterMicroUsbToTypeC adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeC(charger);
+//        System.out.println("Charging throughout first adapter");
+//        samsungS22.pluginCharger(adapterMicroUsbToTypeC);
+//        samsungS22.charge(10);
+//        printBatteryStatus(samsungS22);
 
-        MobilePhone phone = new MobilePhone();
-        phone.pluginCharger(charger);
-        phone.charge(20);
-        System.out.printf("Current power status = %s%n", phone.getChargingPercent());
 
-        phone.pluginCharger(new AdapterTypeCToMicroUsb(fastCharge));
-        phone.charge(20);
-        System.out.printf("Current power status = %s%n", phone.getChargingPercent());
+//        TODO: implement and use adapter Type-C => USB
+//        System.out.println("Maintaining legacy charging");
+//        phone.pluginCharger(new AdapterTypeCToMicroUsb(fastCharge));
+//        phone.charge(20);
+//        System.out.printf("Current power status = %s%n", phone.getChargingPercent());
 
     }
 
