@@ -1,33 +1,12 @@
-public class AsianCity implements City {
-
-    private final String name;
-    private final double temperature;
-    private boolean hasWeatherWarning;
+public class AsianCity extends City {
 
     public AsianCity(String name, double temperature) {
-        this.name = name;
-        this.temperature = temperature;
-        hasWeatherWarning = false;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getTemperature() {
-        return temperature;
+        super(name, temperature);
     }
 
     public String getTemperatureScale() {
         return "Celsius";
     }
 
-    public boolean getHasWeatherWarning() {
-        return hasWeatherWarning;
-    }
-
-    public void setHasWeatherWarning(boolean hasWeatherWarning) {
-        this.hasWeatherWarning = hasWeatherWarning;
-    }
 
 }

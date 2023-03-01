@@ -1,14 +1,31 @@
-public interface City {
+abstract public class City {
 
-    String getName();
+    private final String name;
+    private final double temperature;
+    private boolean hasWeatherWarning;
 
-    double getTemperature();
+    public City(String name, double temperature) {
+        this.name = name;
+        this.temperature = temperature;
+        hasWeatherWarning = false;
+    }
 
-    String getTemperatureScale();
+    public String getName() {
+        return name;
+    }
 
-    boolean getHasWeatherWarning();
+    public double getTemperature() {
+        return temperature;
+    }
 
-    void setHasWeatherWarning(boolean hasWeatherWarning);
+    abstract public String getTemperatureScale();
 
+    public boolean getHasWeatherWarning() {
+        return hasWeatherWarning;
+    }
+
+    public void setHasWeatherWarning(boolean hasWeatherWarning) {
+        this.hasWeatherWarning = hasWeatherWarning;
+    }
 
 }

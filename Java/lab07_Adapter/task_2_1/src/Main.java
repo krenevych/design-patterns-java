@@ -1,19 +1,35 @@
+import java.lang.reflect.Array;
+
 public class Main {
 
     public static void main(String[] args) {
-        WeatherWarnings weatherWarnings = new WeatherWarnings();
 
-        NorthAmericanCity chicago = new NorthAmericanCity("Chicago", 16);
-        weatherWarnings.postWarning(chicago);
+        // Спостережна станція
+        WeatherWarnings weatherWarnings = new WeatherWarnings(16, 100); // допустима температура визначається в межах
+                                                                        // від 16 до 100 градусів по Фаренгейту
+                                                                        // тобто від -8.89 до 37.78 градусів по Цельсію
 
-        NorthAmericanCity phoenix = new NorthAmericanCity("Phoenix", 104);
-        weatherWarnings.postWarning(phoenix);
+        City[] cityArray = {
+                new NorthAmericanCity("Chicago", 16),  // 16 градусів по Фаренгейту
+                new NorthAmericanCity("Phoenix", 104), // 104 градуси по Фаренгейту
+                new NorthAmericanCity("Portland", 70), // 70 градусів по Фаренгейту
+                new AsianCity("Bangkok", 50), // 50 градусів по Цельсію це 122 градуси по Фаренгейту
+                new AsianCity("Beijing", 7)   // 7 градусів по Цельсію це -13.89 градусів по Фаренгейту
+        };
 
-        NorthAmericanCity portland = new NorthAmericanCity("Portland", 70);
-        weatherWarnings.postWarning(portland);
+        for (City city : cityArray) {
+            weatherWarnings.postWarning(city);
+        }
 
-        AsianCity bangkok = new AsianCity("Bangkok", 50);
-        weatherWarnings.postWarning(bangkok);
+
+        System.out.println("============ Result ====================");
+        for (City city : cityArray) {
+            if (city.getHasWeatherWarning()){
+                System.out.printf("%s has temperature warning! Temperature is %s %s\n",
+                        city.getName(), city.getTemperature(), city.getTemperatureScale());
+            }
+        }
+
     }
 
 }
