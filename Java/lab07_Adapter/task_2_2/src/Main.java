@@ -11,30 +11,33 @@ public class Main {
         phone.charge(20);
         phone.pluginCharger(charger);
         phone.charge(20);
+        phone.unplugCharger();
         System.out.printf("Current power status = %s%n", phone.getChargingPercent());
 
         System.out.println("\n============= Type-C ==============\n");
         FastCharge fastCharge = new FastCharge(18);
 
-        SamsungS22 samsungS22 = new SamsungS22();
-        samsungS22.makeCall();
-        samsungS22.pluginCharger(fastCharge);
-        samsungS22.charge(30);
-        printBatteryStatus(samsungS22);
-        samsungS22.makeCall();
-        printBatteryStatus(samsungS22);
-        samsungS22.unplugCharger();
-        samsungS22.charge(10);
-        printBatteryStatus(samsungS22);
-
-
+        SamsungS samsung = new SamsungS();
+        samsung.makeCall();
+        samsung.pluginCharger(fastCharge);
+        samsung.charge(30);
+        samsung.unplugCharger();
+        printBatteryStatus(samsung);
+        samsung.makeCall();
+        printBatteryStatus(samsung);
+        samsung.charge(10);
+        samsung.unplugCharger();
+        printBatteryStatus(samsung);
 
 //        TODO: implement and use adapter USB => Type-C
-//        AdapterMicroUsbToTypeC adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeC(charger);
-//        System.out.println("Charging throughout first adapter");
-//        samsungS22.pluginCharger(adapterMicroUsbToTypeC);
-//        samsungS22.charge(10);
-//        printBatteryStatus(samsungS22);
+        samsung.pluginCharger(charger);  // Fixme: implement adapter
+//        System.out.println("Charging throughout adapter");
+//        TypeCCharger adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeC(charger);  // адаптер через агрегацію
+//        TypeCCharger adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeCInheritance(5.0f, 1.0f);  // адаптер через наслідування
+//        samsung.pluginCharger(adapterMicroUsbToTypeC);
+        samsung.charge(10);
+        samsung.unplugCharger();
+        printBatteryStatus(samsung);
 
 
 //        TODO: implement and use adapter Type-C => USB
@@ -45,7 +48,7 @@ public class Main {
 
     }
 
-    private static void printBatteryStatus(SamsungS22 phone){
+    private static void printBatteryStatus(SamsungS phone){
         System.out.printf("Current battery status = %s%n", phone.getChargingPercent());
     }
 

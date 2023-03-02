@@ -14,7 +14,7 @@ public class Main {
                 new NorthAmericanCity("Phoenix", 104), // 104 градуси по Фаренгейту
                 new NorthAmericanCity("Portland", 70), // 70 градусів по Фаренгейту
                 new AsianCity("Bangkok", 50), // 50 градусів по Цельсію це 122 градуси по Фаренгейту
-                new AsianCity("Beijing", 7)   // 7 градусів по Цельсію це -13.89 градусів по Фаренгейту
+                new AsianCity("Beijing", 7)   // 7 градусів по Цельсію це 44.89 градусів по Фаренгейту
         };
 
         for (City city : cityArray) {

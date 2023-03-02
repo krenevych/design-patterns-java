@@ -1,4 +1,4 @@
-public class SamsungS22 {
+public class SamsungS {
 
     private int chargingPercent = 0;
     private TypeCCharger charger = null;
@@ -28,7 +28,7 @@ public class SamsungS22 {
 
     public void charge(int time) {
         if (charger == null) {
-            System.out.println("Plugin micro usb charger");
+            System.out.println("Plugin type-C charger");
             return;
         }
 
