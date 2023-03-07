@@ -15,11 +15,11 @@ public class Canvas extends JPanel {
 
     @Override
     public void paint(Graphics graphics) {
-        Square square = new BlueSquare();
+        Shape square = new Square(new ShapeColorBlue());
         square.draw(graphics);
-        Circle circle = new RedCircle();
+        Shape circle = new Circle(new ShapeColorRed());
         circle.draw(graphics);
-        Triangle triangle = new GreenTriangle();
+        Shape triangle = new Triangle(new ShapeColorGreen());
         triangle.draw(graphics);
     }
 
