@@ -1,8 +1,8 @@
 public class FictionBook {
 
-  String name;
-  boolean checkedOut;
-  boolean isAPlay;
+  private final String name; // назва книги
+  boolean checkedOut;        // чи книга була замовлена (взята для прочитання)
+  private boolean isAPlay;   // книга є п'єсою
 
   public FictionBook(String name, boolean isAPlay) {
     this.name = name;
@@ -10,8 +10,11 @@ public class FictionBook {
     checkedOut = false;
   }
 
+  /**
+   * Замовити (зарезервувати для прочитання) книгу
+   */
   public void checkout() {
-    if(!checkedOut) {
+    if (!checkedOut) { // Якщо книга не була зарезервована, то вона доступна для резервування
       System.out.println("Checking out " + name + "\n");
       checkedOut = true;
     } else {
@@ -19,8 +22,11 @@ public class FictionBook {
     }
   }
 
+  /**
+   * Повернути книгу (зняти резервування)
+   */
   public void returnBook() {
-    if(checkedOut) {
+    if (checkedOut) {  // Якщо книга була зарезервована, то її можна повернути
       System.out.println("Returning " + name + "\n");
       checkedOut = false;
     } else {

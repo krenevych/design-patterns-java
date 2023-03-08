@@ -1,26 +1,61 @@
 import java.util.ArrayList;
 
+/**
+ * Бібліотека книг, що містить документальні та художні книги
+ */
 public class BookCollection {
 
-  private ArrayList<NonfictionBook> nonfictionBooks = new ArrayList();
-  private ArrayList<FictionBook> fictionBooks = new ArrayList();
+  /**
+   * Список документальних книг, що містяться у бібліотеці
+   */
+  private final ArrayList<NonfictionBook> nonfictionBooks = new ArrayList<>();
 
+  /**
+   * Список художніх книг, що містяться у бібліотеці
+   */
+  private final ArrayList<FictionBook> fictionBooks = new ArrayList<>();
+
+  /**
+   * Додати документальну книгу в бібліотеку
+   *
+   * @param nonfictionBook документальна книга
+   */
   public void addNonfictionBook(NonfictionBook nonfictionBook) {
     nonfictionBooks.add(nonfictionBook);
   }
 
+  /**
+   * Додати художню книгу в бібліотеку
+   *
+   * @param fictionBook художня книга
+   */
   public void addFictionBook(FictionBook fictionBook) {
     fictionBooks.add(fictionBook);
   }
 
+  /**
+   * Перевірити на доступність всі книжки в бібліотеці
+   * (чи були вони взяті для читання)
+   */
   public void checkout() {
-    nonfictionBooks.forEach(NonfictionBook::checkout);
-    fictionBooks.forEach(FictionBook::checkout);
+    for (NonfictionBook nonfictionBook : nonfictionBooks) {
+      nonfictionBook.checkout();
+    }
+    for (FictionBook fictionBook : fictionBooks) {
+      fictionBook.checkout();
+    }
   }
 
+    /**
+   * Повернути всі книжки до бібліотеки (зробити доступними)
+   */
   public void returnBook() {
-    nonfictionBooks.forEach(NonfictionBook::returnBook);
-    fictionBooks.forEach(FictionBook::returnBook);
+    for (NonfictionBook nonfictionBook : nonfictionBooks) {
+      nonfictionBook.returnBook();
+    }
+    for (FictionBook fictionBook : fictionBooks) {
+      fictionBook.returnBook();
+    }
   }
 
 
