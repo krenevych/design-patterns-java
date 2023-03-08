@@ -14,13 +14,13 @@ public class SalesTeam {
         salespeople.add(salesperson);
     }
 
-    public void payExpenses(int amount) {
+    public void payExpenses() {
         for (Manager manager : managers) {
-            manager.payExpenses(amount);
+            manager.payExpenses();
         }
 
         for (Salesperson salesperson : salespeople) {
-            salesperson.payExpenses(amount);
+            salesperson.payExpenses();
         }
     }
 
