@@ -3,58 +3,36 @@ import java.util.ArrayList;
 /**
  * Бібліотека книг, що містить документальні та художні книги
  */
-public class BookCollection {
+public class BookCollection implements Readable {
 
   /**
    * Список документальних книг, що містяться у бібліотеці
    */
-  private final ArrayList<NonfictionBook> nonfictionBooks = new ArrayList<>();
+  private final ArrayList<Readable> children = new ArrayList<>();
 
-  /**
-   * Список художніх книг, що містяться у бібліотеці
-   */
-  private final ArrayList<FictionBook> fictionBooks = new ArrayList<>();
-
-  /**
-   * Додати документальну книгу в бібліотеку
-   *
-   * @param nonfictionBook документальна книга
-   */
-  public void addNonfictionBook(NonfictionBook nonfictionBook) {
-    nonfictionBooks.add(nonfictionBook);
-  }
-
-  /**
-   * Додати художню книгу в бібліотеку
-   *
-   * @param fictionBook художня книга
-   */
-  public void addFictionBook(FictionBook fictionBook) {
-    fictionBooks.add(fictionBook);
+  public void add(Readable readable) {
+    children.add(readable);
   }
 
   /**
    * Перевірити на доступність всі книжки в бібліотеці
    * (чи були вони взяті для читання)
    */
+  @Override
   public void checkout() {
-    for (NonfictionBook nonfictionBook : nonfictionBooks) {
-      nonfictionBook.checkout();
+    for (Readable readable : children) {
+      readable.checkout();
     }
-    for (FictionBook fictionBook : fictionBooks) {
-      fictionBook.checkout();
-    }
+
   }
 
-    /**
+  /**
    * Повернути всі книжки до бібліотеки (зробити доступними)
    */
-  public void returnBook() {
-    for (NonfictionBook nonfictionBook : nonfictionBooks) {
-      nonfictionBook.returnBook();
-    }
-    for (FictionBook fictionBook : fictionBooks) {
-      fictionBook.returnBook();
+  @Override
+  public void returnReadable() {
+    for (Readable readable : children) {
+      readable.returnReadable();
     }
   }
 
