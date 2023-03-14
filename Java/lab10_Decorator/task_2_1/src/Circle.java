@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Circle {
+public class Circle implements Drawable{
 
     private final int x;
     private final int y;
@@ -12,6 +12,7 @@ public class Circle {
         this.r = r;
     }
 
+    @Override
     public void draw(Graphics graphics) {
         graphics.drawOval(x - r, y - r, r, r);
     }
