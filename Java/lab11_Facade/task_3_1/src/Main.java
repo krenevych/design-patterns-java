@@ -25,6 +25,5 @@ public class Main {
 
         System.out.println("====== VideoConversionFacade: conversion completed =======\n");
         videoFileConverted.play(new MPEG4CompressionCodec());
-
     }
 }
