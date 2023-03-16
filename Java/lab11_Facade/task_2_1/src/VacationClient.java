@@ -6,15 +6,9 @@ public class VacationClient {
     LocalDate startDate = LocalDate.of(2023, 8, 1);
     LocalDate endDate = LocalDate.of(2023, 8, 15);
 
-    Flight flight = new Flight();
-    flight.bookOutwardJourney(startDate);
-    flight.bookReturnJourney(endDate);
-
-    Hotel hotel = new Hotel();
-    hotel.book(startDate, endDate);
-
-    CarRental carRental = new CarRental();
-    carRental.book(startDate, endDate);
+    // Виклик фасаду - туристичного агента
+    TouristAgent touristAgent = new TouristAgent();
+    touristAgent.organizeTour(startDate, endDate);
   }
 
 }
