@@ -13,7 +13,7 @@
 
 ```java
 
-public VideoFile(VideoFile file, Codec codec) {
+public VideoFile convert(VideoFile file, Codec codec) {
     ...
     return newVideoFile;
 }
