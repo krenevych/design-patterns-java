@@ -12,12 +12,10 @@
 та формат у який необхідно перетворити файл
 
 ```java
-
 public VideoFile convert(VideoFile file, Codec codec) {
     ...
     return newVideoFile;
 }
-
 ```
 
 Проведіть рефакторинг коду із застосуванням шаблону проєктування
