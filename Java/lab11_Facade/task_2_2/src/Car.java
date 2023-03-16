@@ -9,13 +9,30 @@ public class Car {
     Handbrake handbrake = new Handbrake();
 
     ignition.turnOn();
+    handbrake.pushDown();
+
     clutch.press();
     gearStick.changeGear(1);
     accelerator.press();
     clutch.lift();
-    handbrake.pushDown();
-    accelerator.press();
+
     clutch.press();
+    gearStick.changeGear(2);
+    accelerator.press();
+    clutch.lift();
+
+    clutch.press();
+    gearStick.changeGear(1);
+    accelerator.press();
+    clutch.lift();
+
+    clutch.press();
+    gearStick.changeGear(0);
+    accelerator.press();
+    clutch.lift();
+
+    handbrake.liftUp();
+    ignition.turnOff();
   }
 
 }
