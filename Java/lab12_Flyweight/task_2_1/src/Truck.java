@@ -1,5 +1,9 @@
 public class Truck implements Vehicle {
 
+  public Truck() {
+    System.out.println("Truck is created");
+  }
+
   private int latitude;
   private int longitude;
 
