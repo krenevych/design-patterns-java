@@ -11,3 +11,56 @@
 Для студентів механіко-математичного факультету та викладачів,
 які проводять заняття з курсу "Шаблони проєктування програмного
 забезпечення".
+
+
+ЗМІСТ
+
+1. [UML та його застосування до зображень діаграм класів.](Java/lab01_UML)
+
+2. [Фабричний метод](Java/lab02_Factory_Method)
+
+3. [Абстрактна фабрика](Java/lab03_Abstract_Factory)
+
+4. [Будівельник](Java/lab04_Builder)
+
+5. [Прототип](Java/lab05_Prototype)
+
+6. [Одинак](Java/lab06_Singleton)
+
+7. [Адаптер.](Java/lab07_Adapter)
+
+8. [Міст.](Java/lab08_Bridge)
+
+9. [Компонувальник.](Java/lab09_Composite)
+
+10. [Декоратор.](Java/lab10_Decorator)
+
+11. [Фасад.](Java/lab11_Facade)
+
+12. [Легковаговик.](Java/lab12_Flyweight)
+
+13. [Замісник.](Java/lab13_Proxy)
+
+14. [Ланцюжок обов'язків.](Java/lab14_Chain)
+
+15. [Команда.](Java/lab15_Command)
+
+16. [Ітератор.](Java/lab16_Iterator)
+
+17. [Посередник.](Java/lab17_Mediator)
+
+18. [Знімок.](Java/lab18_Memento)
+
+19. [Спостерігач.](Java/lab19_Observer)
+
+20. [Стан.](Java/lab20_State)
+
+21. [Стратегія.](Java/lab21_Strategy)
+
+22. [Шаблонний метод.](Java/lab22_Template_Method)
+
+23. [Відвідувач.](Java/lab23_Visitor)
+
+
+ 
+
