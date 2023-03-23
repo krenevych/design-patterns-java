@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+/**
+ * Зображення
+ */
 public class ImageFile implements DisplayObject {
 
     final private BufferedImage image;
@@ -14,6 +17,9 @@ public class ImageFile implements DisplayObject {
         image = load(path);
     }
 
+    /**
+     * Показує зображення за допомогою спеціалізованої програми
+     */
     public void display() {
         System.out.println("Displaying image.");
         ImageIcon icon = new ImageIcon(image);
@@ -21,6 +27,11 @@ public class ImageFile implements DisplayObject {
         JOptionPane.showMessageDialog(null, label);
     }
 
+    /**
+     * Завантажую зображення з диску
+     * @param path шлях до зображення
+     * @return буфер зображення
+     */
     BufferedImage load(String path) {
         System.out.println("Loading image " + path + "...");
         BufferedImage image = null;

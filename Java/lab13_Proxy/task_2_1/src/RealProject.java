@@ -1,4 +1,11 @@
+/**
+ * Конкретний реальний проект, що реалізує інтерфейс Project
+ */
 public class RealProject implements Project {
+
+    /**
+     * Адреса проєкту на віддаленому сервері
+     */
     private final String url;
 
     public RealProject(String url) {
