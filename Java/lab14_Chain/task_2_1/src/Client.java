@@ -1,23 +1,30 @@
-
-
 public class Client {
     public static void main(String[] args) {
 
-        String[] files = {
-                "image.jpg",
-                "image.png",
-                "document.docx",
-                "document.doc",
-                "table.xls",
-                "table.xlsx",
-                "presentation.pptx",
-                "document.pdf",
+        Request[] requests = {
+            new Request(Request.Type.TYPE1),
+            new Request(Request.Type.TYPE2),
+            new Request(Request.Type.TYPE1),
+            new Request(Request.Type.TYPE3),
+            new Request(Request.Type.TYPE4),
+            new Request(Request.Type.TYPE2),
+            new Request(Request.Type.TYPE4),
+            new Request(Request.Type.TYPE1),
         };
 
-        // Create Chain of responsibility to open file by correct program according to the extension.
-        for (String file : files) {
-            // open file
-            // handler.open(file);
+
+        for (Request request : requests) {
+            if (request.getType() == Request.Type.TYPE1) {
+                System.out.println("Type1: Handle request " + request);
+            } else if (request.getType() == Request.Type.TYPE2) {
+                System.out.println("Type2: Handle request " + request);
+            } else if (request.getType() == Request.Type.TYPE3) {
+                System.out.println("Type3: Handle request " + request);
+            } else if (request.getType() == Request.Type.TYPE4) {
+                System.out.println("Type4: Handle request " + request);
+            } else {
+                System.out.println("Unhandled request " + request);
+            }
         }
 
 
