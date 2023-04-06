@@ -3,7 +3,12 @@ public class Client {
 
         Lamp lamp = new Lamp();
 
+        Command commandOn = new TurnLightOnCommand(lamp);
+        Command commandOff = new TurnLightOffCommand(lamp);
+
         Controller controller = new Controller();
+        controller.setCommandOn(commandOn);
+        controller.setCommandOff(commandOff);
 
         // Simulation
         controller.on();
