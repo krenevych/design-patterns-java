@@ -1,18 +1,30 @@
 public class Client {
     public static void main(String[] args) {
 
-        Lamp lamp = new Lamp();
+        Lamp kitchenLamp = new Lamp("Kitchen");
+        Lamp hallLamp = new Lamp("Hall");
+        Lamp bedroomLamp = new Lamp("Bedroom");
+        Lamp bathroomLamp = new Lamp("Bathroom");
 
-        Controller controller = new Controller();
+        Controller controllerKitchenLamp = new Controller();
+        Controller controllerHallLamp = new Controller();
+        Controller controllerBedroomLamp = new Controller();
+        Controller controllerBathroomLamp = new Controller();
+        Controller controllerUniversal = new Controller();
 
         // Simulation
-        controller.on();
-        controller.on();
-        controller.off();
-        controller.off();
-        controller.on();
-        controller.on();
-        controller.off();
+        controllerKitchenLamp.on();
+        controllerHallLamp.on();
+        controllerBedroomLamp.on();
+
+        controllerKitchenLamp.off();
+        controllerHallLamp.off();
+        controllerBedroomLamp.off();
+
+        controllerBedroomLamp.on();
+        controllerBathroomLamp.on();
+
+        controllerUniversal.off();
 
     }
 }
