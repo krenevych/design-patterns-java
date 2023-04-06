@@ -1,18 +1,23 @@
 public class Client {
     public static void main(String[] args) {
 
-        TextEditor textEditor = new TextEditor();
-        textEditor.newDocument("blank.txt");
+        Lamp lamp = new Lamp();
 
-        /////////////////////////////////////////////
-        // Testing buttons, menu items, shortcuts...
-        //////////////////////////////////////////////
-        textEditor.clickSaveButton();
-        textEditor.clickPrintButton();
-        textEditor.selectShowInfoMenuItem();
-        textEditor.selectPrintMenuItem();
-        textEditor.selectSaveMenuItem();
-        textEditor.pressSaveShortcut();
-        textEditor.pressPrintShortcut();
+        Command commandOn = new TurnLightOnCommand(lamp);
+        Command commandOff = new TurnLightOffCommand(lamp);
+
+        Controller controller = new Controller();
+        controller.setCommandOn(commandOn);
+        controller.setCommandOff(commandOff);
+
+        // Simulation
+        controller.on();
+        controller.on();
+        controller.off();
+        controller.off();
+        controller.on();
+        controller.on();
+        controller.off();
+
     }
 }
