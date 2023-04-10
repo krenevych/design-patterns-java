@@ -1,6 +1,6 @@
 public class Employee {
 
-  private String name;
+  private final String name;
 
   public Employee(String name) {
     this.name = name;
@@ -10,4 +10,10 @@ public class Employee {
     return name;
   }
 
+  @Override
+  public String toString() {
+    return "Employee{" +
+            "name='" + name + '\'' +
+            '}';
+  }
 }

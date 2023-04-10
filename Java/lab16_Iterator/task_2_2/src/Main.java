@@ -1,12 +1,20 @@
+
 public class Main {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Item pens = new Item("pens", 175);
-    Item pencils = new Item("pencils", 0);
-    Item paper = new Item("paper", 500);
+        CollectionIntegers integers = new CollectionIntegers();
+        integers.add(110);
+        integers.add(312);
+        integers.add(111);
+        integers.add(813);
+        integers.add(131);
+        integers.add(140);
 
+//        for (Integer integer: integers) {
+//            System.out.println(integer);
+//        }
 
-  }
+    }
 
 }
