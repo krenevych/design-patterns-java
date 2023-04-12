@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Літаки, що приземлилися
+ */
 public class PlanesOnGround {
 
   ArrayList<Plane> planes = new ArrayList<>();

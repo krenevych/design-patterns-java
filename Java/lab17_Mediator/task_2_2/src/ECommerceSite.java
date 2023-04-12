@@ -2,9 +2,19 @@ import java.util.HashMap;
 
 public class ECommerceSite {
 
+  /**
+   * Покупець
+   */
   private Customer customer;
+  /**
+   * Служба доставлення
+   */
   private Driver driver;
-  private HashMap<String, Integer> stock;
+
+  /**
+   * Товари, що наявні в магазині
+   */
+  private final HashMap<String, Integer> stock;
 
 
   public ECommerceSite(Customer customer) {
@@ -16,6 +26,12 @@ public class ECommerceSite {
     stock.put("erasers", 75);
   }
 
+  /**
+   * Замовлення товару
+   * @param item товар
+   * @param quantity кількість одиниць товару
+   * @return true, якщо замовлення товару пройшло успішно
+   */
   public boolean checkInStock(String item, int quantity) {
     if (stock.containsKey(item) && stock.get(item) > quantity) {
       return true;
@@ -24,9 +40,14 @@ public class ECommerceSite {
     }
   }
 
+  /**
+   * Відвантажити замовлення
+   * @param item товар
+   * @param quantity кількість одиниць товару
+   */
   public void sell(String item, int quantity) {
 
-    int newQuantity = stock.get("pens") - quantity;
+    int newQuantity = stock.get(item) - quantity;
     stock.put(item, newQuantity);
 
     driver.deliver(item, quantity, customer);
