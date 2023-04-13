@@ -1,26 +1,14 @@
 import java.util.HashMap;
 
-public class ECommerceSite {
-
-  /**
-   * Покупець
-   */
-  private Customer customer;
-  /**
-   * Служба доставлення
-   */
-  private Driver driver;
+public class ECommerceSite extends Component {
 
   /**
    * Товари, що наявні в магазині
    */
   private final HashMap<String, Integer> stock;
 
-
-  public ECommerceSite(Customer customer) {
-    this.customer = customer;
-    this.driver = new Driver();
-    stock = new HashMap();
+  public ECommerceSite() {
+    stock = new HashMap<>();
     stock.put("pens", 100);
     stock.put("pencils", 50);
     stock.put("erasers", 75);
@@ -28,31 +16,40 @@ public class ECommerceSite {
 
   /**
    * Замовлення товару
-   * @param item товар
-   * @param quantity кількість одиниць товару
+   *
+   * @param order товар
    * @return true, якщо замовлення товару пройшло успішно
    */
-  public boolean checkInStock(String item, int quantity) {
-    if (stock.containsKey(item) && stock.get(item) > quantity) {
-      return true;
-    } else {
-      return false;
+  public boolean checkInStock(Order order) {
+    String itemInStock = order.item;
+    boolean res = stock.containsKey(itemInStock) && stock.get(itemInStock) > order.quantity;
+    if (res) {
+      int newQuantity = stock.get(itemInStock) - order.quantity;
+      stock.put(itemInStock, newQuantity);
     }
+
+    return res;
   }
 
   /**
    * Відвантажити замовлення
-   * @param item товар
-   * @param quantity кількість одиниць товару
+   *
+   * @param order замовлення
    */
-  public void sell(String item, int quantity) {
-
-    int newQuantity = stock.get(item) - quantity;
-    stock.put(item, newQuantity);
-
-    driver.deliver(item, quantity, customer);
+  public void sell(Order order) {
+    if (checkInStock(order)) {
+      broadcastMessage(order); // пересилаємо повідомлення далі, для отримання його службою доставлення
+    } else {
+      // пересилаємо повідомлення далі, з повідомленням, що не можливо відвантажити товар
+      broadcastMessage(new Order(order, "Fail: There is not enough quantity to ship Item"));
+    }
   }
 
 
-
+  @Override
+  public void handleMessage(Component componentFrom, Order order) {
+    if (componentFrom instanceof Customer) { // Якщо повідомлення прийшло від клієнта
+      sell(order);
+    }
+  }
 }
