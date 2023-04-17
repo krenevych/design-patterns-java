@@ -18,15 +18,7 @@ public class Originator {
      * @param toUpdate параметр, що додається до об'єкту
      */
     public void updateState(String toUpdate) {
-        setState(this.state + toUpdate);
+        this.state += toUpdate;
     }
-
-    /**
-     * Встановлює стан об'єкту заданим
-     * @param state новий стан
-     */
-    public void setState(String state) {
-        this.state = state;
-    }
-    
+        
 }
