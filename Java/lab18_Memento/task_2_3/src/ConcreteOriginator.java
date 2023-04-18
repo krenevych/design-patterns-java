@@ -1,4 +1,4 @@
-public class Originator {
+public class ConcreteOriginator implements Originator{
     /**
      * Цей параметр моделює стан нашого об'єкту
      */
@@ -21,13 +21,12 @@ public class Originator {
         this.state += toUpdate;
     }
 
-    public Memento save(){
-        return new ConcreteMemento(state);
+    @Override
+    public Memento save() {
+        return new ConcreteMemento(this, state);
     }
 
-    public void restore(Memento memento){
-        if (memento instanceof ConcreteMemento){
-            state = ((ConcreteMemento) memento).getState();
-        }
+    void setState(String state) {
+        this.state = state;
     }
 }
