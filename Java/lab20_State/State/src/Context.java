@@ -13,7 +13,7 @@ public class Context {
         state.doThis(this);
     }
 
-    public void doThat(){
+    public void doThat() {
         state.doThat(this);
     }
 

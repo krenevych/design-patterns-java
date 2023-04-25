@@ -1,13 +1,13 @@
 public class StatePublished implements State {
     @Override
     public void publish(Document document, String user) {
-        // Do nothing
+       System.out.println("StatePublished: state has not been changed!");
+
     }
 
     @Override
     public void abandon(Document document, String user) {
-        System.out.println("Документ = " + document.getText());
-        System.out.println("State : Published -> Draft");
+        System.out.println("StatePublished -> StateDraft");
         document.setState(new StateDraft());
     }
 }
