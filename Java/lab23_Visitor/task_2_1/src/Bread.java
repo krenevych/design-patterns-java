@@ -11,4 +11,9 @@ public class Bread implements Groceries {
         return price;
     }
 
+    @Override
+    public void accept(PriceVisitor visitor) {
+        visitor.visit(this);
+    }
+
 }

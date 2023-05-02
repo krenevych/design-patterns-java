@@ -1,7 +1,7 @@
 public class ElementB implements Element {
     @Override
     public void accept(Visitor visitor) {
-        visitor.visit(this);
+        visitor.visitElementB(this);
     }
 
     void featureB() {

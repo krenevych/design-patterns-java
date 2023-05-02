@@ -1,6 +1,6 @@
-public class Bread implements Groceries {
+public class Coffee implements Groceries {
 
-    private double price = 1;
+    private double price = 10;
 
     public void setPrice(double price) {
         this.price = price;
@@ -12,7 +12,7 @@ public class Bread implements Groceries {
     }
 
     @Override
-    public void accept(Visitor visitor) {
+    public void accept(PriceVisitor visitor) {
         visitor.visit(this);
     }
 

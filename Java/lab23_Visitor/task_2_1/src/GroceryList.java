@@ -20,4 +20,12 @@ public class GroceryList implements Groceries {
         return sum;
     }
 
+    @Override
+    public void accept(PriceVisitor visitor) {
+        for (Groceries grocery : groceries) {
+            grocery.accept(visitor);
+        }
+
+    }
+
 }

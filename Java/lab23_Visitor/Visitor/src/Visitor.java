@@ -1,4 +1,4 @@
 public interface Visitor {
-    void visit(ElementA elementA);
-    void visit(ElementB elementB);
+    void visit(ElementA element);
+    void visit(ElementB element);
 }

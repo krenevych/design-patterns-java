@@ -1,7 +1,6 @@
-public interface Visitor {
+public interface PriceVisitor {
     void visit(Bread bread);
     void visit(Milk milk);
-    void visit(GroceryList list);
 
     void visit(Coffee coffee);
 }
