@@ -1,19 +1,12 @@
 /**
  * Вегетаріанська піца
  */
-public class VegetarianPizza {
-
-    /**
-     * Підготувати тісто
-     */
-    public void makeBase() {
-        System.out.println("Mix flour, yeast and salt");
-        System.out.println("Roll out the dough");
-    }
+public class VegetarianPizza extends Pizza {
 
     /**
      * Додати наповнювачі
      */
+    @Override
     public void addToppings() {
         System.out.println("Add tomato");
         System.out.println("Add cheese");
@@ -24,19 +17,11 @@ public class VegetarianPizza {
     /**
      * Випікати підготовлену піцу
      */
+    @Override
     public void cook() {
         System.out.println("Cook in the oven for 15 minutes");
     }
 
-    /**
-     * Надрукувати рецепт
-     */
-    public void printInstructions() {
-        makeBase();
-        addToppings();
-        cook();
-        System.out.println();
-    }
 
 
 }
