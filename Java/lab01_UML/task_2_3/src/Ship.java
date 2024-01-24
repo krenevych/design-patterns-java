@@ -1,7 +1,6 @@
 public class Ship extends Vehicle {
 
     final private String model;
-    final private static int numberOfWheels = 4;
     final private Engine engine;
 
     public Ship(String model) {

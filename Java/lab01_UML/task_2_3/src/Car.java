@@ -6,10 +6,11 @@ public class Car extends Vehicle {
 
     private Wheel wheel;
 
-    public Car(String model) {
+    public Car(String model, Wheel wheel) {
         this.hasWheels = true;
         this.model = model;
         this.engine = new Engine(360);
+        this.wheel = wheel;
     }
 
     public void setWheel(Wheel wheel) {

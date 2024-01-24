@@ -1,9 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("Porche 911");
 
         Wheel wheel = new Wheel(17);
-        car.setWheel(wheel);
+
+        Car car = new Car("Porsche 911", wheel);
+
+
+        Wheel wheel2 = new Wheel(21);
+        car.setWheel(wheel2);
 
         float distance = car.go(10);
         System.out.printf("distance: %skm%n", distance);
