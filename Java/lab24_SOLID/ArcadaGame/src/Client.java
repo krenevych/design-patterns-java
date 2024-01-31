@@ -1,3 +1,8 @@
+import doomlib.GameScene;
+import doomlib.MonsterFactoryDemon;
+import doomlib.MonsterFactoryImp;
+import doomlib.MonsterFactoryZombie;
+
 import java.util.Scanner;
 
 public class Client {
@@ -12,13 +17,25 @@ public class Client {
     }
 
 
+
     private static void addMonsters(GameScene scene){
-        scene.addMonster(MonsterType.IMP);
-        scene.addMonster(MonsterType.ZOMBIE);
-        scene.addMonster(MonsterType.IMP);
-        scene.addMonster(MonsterType.DEMON);
-        scene.addMonster(MonsterType.DEMON);
-        scene.addMonster(MonsterType.ZOMBIE);
+        MonsterFactoryImp monsterFactoryImp = new MonsterFactoryImp();
+        MonsterFactoryDemon monsterFactoryDemon = new MonsterFactoryDemon();
+        MonsterFactoryZombie monsterFactoryZombie = new MonsterFactoryZombie();
+        CocodemonFactory cocodemonFactory = new CocodemonFactory();
+
+        scene.addMonster(monsterFactoryImp);
+        scene.addMonster(monsterFactoryZombie);
+        scene.addMonster(monsterFactoryImp);
+        scene.addMonster(monsterFactoryDemon);
+        scene.addMonster(monsterFactoryDemon);
+        scene.addMonster(monsterFactoryZombie);
+        scene.addMonster(cocodemonFactory);
+        scene.addMonster(cocodemonFactory);
+        scene.addMonster(cocodemonFactory);
+        scene.addMonster(cocodemonFactory);
+
+
     }
 
     public static void main(String[] args) {

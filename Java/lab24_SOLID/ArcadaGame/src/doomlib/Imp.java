@@ -1,15 +1,16 @@
-public class Imp {
+package doomlib;
 
-    final String level;
+public class Imp extends Monster{
 
     public Imp(String level) {
-        this.level = level;
+        super(level);
     }
 
+    @Override
     public void shoot() {
         System.out.printf("Creature: %s, " +
                 "level %s, action: shoots\n",
-                "Imp", level);
+                "doomlib.Imp", level);
     }
 
 }

@@ -1,14 +1,15 @@
-public class Demon {
+package doomlib;
 
-    final String level;
+public class Demon extends Monster{
 
     public Demon(String level) {
-        this.level = level;
+        super(level);
     }
 
+    @Override
     public void shoot() {
         System.out.printf("Creature: %s, " +
                 "level %s, action: shoots\n",
-                "Demon", level);
+                "doomlib.Demon", level);
     }
 }
