@@ -7,8 +7,9 @@ class Bicycle extends Vehicle {
 
     @Override
     public void drive() {
-        System.out.println("for Bicycle method 'ride' is used");
-        throw new RuntimeException("drive: for Bicycle method 'ride' is used");
+//        System.out.println("for Bicycle method 'ride' is used");
+//        throw new RuntimeException("drive: for Bicycle method 'ride' is used");
+        ride();
     }
 
     public void ride() {

@@ -10,9 +10,7 @@ abstract class Vehicle {
         this.maxSpeed = maxSpeed;
     }
     
-    public void drive() {
-        System.out.println("Vehicle is driving.");
-    }
+    abstract public void drive();
     
     // Інші методи класу Vehicle
 }
