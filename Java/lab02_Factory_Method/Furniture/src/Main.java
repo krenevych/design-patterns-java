@@ -1,19 +1,18 @@
 public class Main {
     public static void main(String[] args) {
         Shop shop = new Shop();
-        FurnitureMaster chairMaster = Chair::new;
+//        FurnitureMaster chairMaster = Chair::new;
         FurnitureMaster tableMaster = new TableMaster();
+        FurnitureMaster cabinetMaster = Cabinet::new;
+//
+//        shop.buildFurniture(chairMaster);
+//        shop.buildFurniture(chairMaster);
 
-        shop.setFurnitureMaster(chairMaster);
+        shop.buildFurniture(tableMaster);
+        shop.buildFurniture(tableMaster);
+        shop.buildFurniture(tableMaster);
 
-        shop.buildFurniture();
-        shop.buildFurniture();
-
-        shop.setFurnitureMaster(tableMaster);
-        shop.buildFurniture();
-        shop.buildFurniture();
-        shop.buildFurniture();
-
+//        shop.buildFurniture(cabinetMaster);
 
         shop.useFurnitures();
 

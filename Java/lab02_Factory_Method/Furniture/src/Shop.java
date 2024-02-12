@@ -2,19 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Shop {
-    private List<Furniture> furnitures = new ArrayList<>();
+    private final List<Furniture> furnitures = new ArrayList<>();
     protected String material = "Wood";
     protected String color = "Crimson";
     protected int nailNumber = 100;
-//
-//    void addFurniture(Furniture furniture){
-//        furnitures.add(furniture);
-//    }
-
-    private FurnitureMaster furnitureMaster;
-    void setFurnitureMaster(FurnitureMaster furnitureMaster){
-        this.furnitureMaster = furnitureMaster;
-    }
 
     void useFurnitures(){
         for (Furniture furniture : furnitures) {
@@ -22,7 +13,10 @@ public class Shop {
         }
     }
 
-    void buildFurniture(/*Furniture.Type type*/){
+    void buildFurniture(
+            /*Furniture.Type type*/
+           FurnitureMaster furnitureMaster
+    ){
 //        if (type == Furniture.Type.CHAIR){
 //            furnitures.add(new Chair(material, color, nailNumber));
 //        }else if (type == Furniture.Type.CABINET){
