@@ -6,16 +6,17 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("Hello");
 
-        String current_os = OPERATION_SYSTEM_LINUX; // Визначається якимось чином яка операційна система використовується
+//        String current_os = OPERATION_SYSTEM_WINDOWS; // Визначається якимось чином яка операційна система використовується
+//        String current_os = OPERATION_SYSTEM_LINUX; // Визначається якимось чином яка операційна система використовується
+        String current_os = OPERATION_SYSTEM_MAC_OS; // Визначається якимось чином яка операційна система використовується
         GUIFactory factory;
         if (current_os.equals(OPERATION_SYSTEM_WINDOWS)){
-            // TODO: WINDOWS
+            factory = new WindowsGuiFactory();
         } else if (current_os.equals(OPERATION_SYSTEM_LINUX)) {
-            // TODO: LINUX
+            factory = new LinuxGuiFactory();
         } else {
-            // TODO: MAC_OS
+            factory = new MacOsGuiFactory();
         }
 
         Button button = factory.createButton();                  // Додати Button
