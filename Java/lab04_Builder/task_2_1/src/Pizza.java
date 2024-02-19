@@ -5,14 +5,44 @@ import java.util.List;
 public class Pizza  // Піца
         implements Valuable {
 
-    public Pizza(String name,
+    public static class PizzaBuilder {
+        private String name = "'Домашня проба'";
+        private Dough dough = (new Dough.Builder()).build();
+        private final List<Topping> toppings = new ArrayList<>();  // Добавки
+
+        public PizzaBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public PizzaBuilder setDough(Dough dough) {
+            this.dough = dough;
+            return this;
+        }
+        public PizzaBuilder addTopping(Topping topping){
+            toppings.add(topping);
+            return this;
+        }
+
+        public Pizza bake(){
+            return new Pizza(
+                    name,
+                    dough,
+                    toppings
+            );
+        }
+
+
+    }
+
+    private Pizza(String name,
                  Dough dough,
                  Topping... additivesList) {
         this(name, dough, Arrays.asList(additivesList));
     }
 
 
-    public Pizza(String name,
+    private Pizza(String name,
                  Dough dough,
                  List<Topping> additivesList) {
         this.name = name;
