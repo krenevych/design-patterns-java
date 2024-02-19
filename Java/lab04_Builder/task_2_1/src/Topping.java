@@ -26,7 +26,7 @@ public class Topping  // Добавки (начинка) - сир, оливки,
         private int cost = 20;               // Вартість добавки
     }
 
-    enum ToppingType {   // Тип добавки
+    public enum ToppingType {   // Тип добавки
         CHEESE,   // сир
         OLIVES,   // оливки
         SAUSAGES  // ковбаски

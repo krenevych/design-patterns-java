@@ -1,8 +1,7 @@
 public class PizzaYolla {
 
 
-
-    Pizza createTexas(){
+    Pizza createTexas() {
         Topping.Builder toppingBuilder = new Topping.Builder();
 
         Topping toppingCheese = toppingBuilder.build();
@@ -36,7 +35,7 @@ public class PizzaYolla {
         return pizza;
     }
 
-    Pizza createMilano(){
+    Pizza createMilano() {
         Topping.Builder toppingBuilder = new Topping.Builder();
 
         Topping toppingCheese = toppingBuilder
@@ -49,8 +48,7 @@ public class PizzaYolla {
                 .setToppingType(Topping.ToppingType.SAUSAGES)
                 .setCost(30).build();
 
-        Topping toppingOlives = toppingBuilder
-                .setToppingName("оливки")
+        Topping toppingOlives = toppingBuilder.setToppingName("оливки")
                 .setToppingType(Topping.ToppingType.OLIVES)
                 .setCost(15).build();
 
