@@ -5,6 +5,12 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
+    public Rectangle(Rectangle otherRectangle) {
+        super(otherRectangle);
+        this.width = otherRectangle.width;
+        this.height = otherRectangle.height;
+    }
+
     private final int width;
     private final int height;
 
@@ -14,5 +20,10 @@ public class Rectangle extends Shape {
                 "width=" + width +
                 ", height=" + height +
                 '}';
+    }
+
+    @Override
+    public Rectangle copy() {
+        return new Rectangle(this);
     }
 }
