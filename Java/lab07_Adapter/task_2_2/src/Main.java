@@ -32,7 +32,7 @@ public class Main {
 //        TODO: implement and use adapter USB => Type-C
 //        samsung.pluginCharger(charger);  // Fixme: implement adapter
         System.out.println("Charging throughout adapter");
-        TypeCCharger adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeC(charger);  // адаптер через агрегацію
+//        TypeCCharger adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeC(charger);  // адаптер через агрегацію
 //        TypeCCharger adapterMicroUsbToTypeC = new AdapterMicroUsbToTypeCInheritance(5.0f, 1.0f);  // адаптер через наслідування
 //        samsung.pluginCharger(adapterMicroUsbToTypeC);
         samsung.charge(10);
