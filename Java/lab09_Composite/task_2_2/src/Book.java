@@ -1,12 +1,12 @@
 /**
  * Клас документальна книга
  */
-public class NonfictionBook {
+public class Book implements Readable {
 
   private final String name; // назва книги
   boolean checkedOut;        // чи книга була замовлена (взята для прочитання)
 
-  public NonfictionBook(String name) {
+  public Book(String name) {
     this.name = name;
     checkedOut = false;
   }
@@ -14,6 +14,7 @@ public class NonfictionBook {
   /**
    * Замовити (зарезервувати для прочитання) книгу
    */
+  @Override
   public void checkout() {
     if(!checkedOut) {  // Якщо книга не була зарезервована, то вона доступна для резервування
       System.out.println("Checking out " + name + "\n");
@@ -26,6 +27,7 @@ public class NonfictionBook {
   /**
    * Повернути книгу (зняти резервування)
    */
+  @Override
   public void returnBook() {
     if(checkedOut) {  // Якщо книга була зарезервована, то її можна повернути
       System.out.println("Returning " + name + "\n");

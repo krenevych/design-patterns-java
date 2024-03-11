@@ -3,60 +3,43 @@ import java.util.ArrayList;
 /**
  * Бібліотека книг, що містить документальні та художні книги
  */
-public class BookCollection {
-
-  /**
-   * Список документальних книг, що містяться у бібліотеці
-   */
-  private final ArrayList<NonfictionBook> nonfictionBooks = new ArrayList<>();
-
-  /**
-   * Список художніх книг, що містяться у бібліотеці
-   */
-  private final ArrayList<FictionBook> fictionBooks = new ArrayList<>();
-
-  /**
-   * Додати документальну книгу в бібліотеку
-   *
-   * @param nonfictionBook документальна книга
-   */
-  public void addNonfictionBook(NonfictionBook nonfictionBook) {
-    nonfictionBooks.add(nonfictionBook);
-  }
-
-  /**
-   * Додати художню книгу в бібліотеку
-   *
-   * @param fictionBook художня книга
-   */
-  public void addFictionBook(FictionBook fictionBook) {
-    fictionBooks.add(fictionBook);
-  }
-
-  /**
-   * Перевірити на доступність всі книжки в бібліотеці
-   * (чи були вони взяті для читання)
-   */
-  public void checkout() {
-    for (NonfictionBook nonfictionBook : nonfictionBooks) {
-      nonfictionBook.checkout();
-    }
-    for (FictionBook fictionBook : fictionBooks) {
-      fictionBook.checkout();
-    }
-  }
+public class BookCollection implements Readable {
 
     /**
-   * Повернути всі книжки до бібліотеки (зробити доступними)
-   */
-  public void returnBook() {
-    for (NonfictionBook nonfictionBook : nonfictionBooks) {
-      nonfictionBook.returnBook();
+     * Список документальних книг, що містяться у бібліотеці
+     */
+    private final ArrayList<Readable> readables = new ArrayList<>();
+
+
+    /**
+     * Додати * в бібліотеку
+     *
+     * @param readable документальна книга
+     */
+    public void add(Readable readable) {
+        readables.add(readable);
     }
-    for (FictionBook fictionBook : fictionBooks) {
-      fictionBook.returnBook();
+
+    /**
+     * Перевірити на доступність всі книжки в бібліотеці
+     * (чи були вони взяті для читання)
+     */
+    @Override
+    public void checkout() {
+        for (Readable child : readables) {
+            child.checkout();
+        }
     }
-  }
+
+    /**
+     * Повернути всі книжки до бібліотеки (зробити доступними)
+     */
+    @Override
+    public void returnBook() {
+        for (Readable child : readables) {
+            child.returnBook();
+        }
+    }
 
 
 }
