@@ -25,8 +25,8 @@ public class CarSimulator {
     Random random = new Random();
 
     Engine.Fuel fuel = Engine.Fuel.values()[random.nextInt(3)];
-    int wheel_diameter = random.nextInt(17, 20);
-    int power = random.nextInt(11, 15) * 10;
+    int wheel_diameter = 17 + random.nextInt(3);
+    int power = (11 + random.nextInt(5)) * 10;
     Car.CarColor color = Car.CarColor.values()[random.nextInt(5)];
 
     Car car = carBuilder
