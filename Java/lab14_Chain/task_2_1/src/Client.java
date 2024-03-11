@@ -12,11 +12,19 @@ public class Client {
             new Request(Request.Type.TYPE1),
         };
 
-        HandlersManager handlersManager = new HandlersManager();
-        Handler handler = handlersManager.getHandler();
 
         for (Request request : requests) {
-            handler.handle(request);
+            if (request.getType() == Request.Type.TYPE1) {
+                System.out.println("Type1: Handle request " + request);
+            } else if (request.getType() == Request.Type.TYPE2) {
+                System.out.println("Type2: Handle request " + request);
+            } else if (request.getType() == Request.Type.TYPE3) {
+                System.out.println("Type3: Handle request " + request);
+            } else if (request.getType() == Request.Type.TYPE4) {
+                System.out.println("Type4: Handle request " + request);
+            } else {
+                System.out.println("Unhandled request " + request);
+            }
         }
 
 

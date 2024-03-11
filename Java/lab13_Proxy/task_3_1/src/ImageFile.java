@@ -35,8 +35,9 @@ public class ImageFile implements DisplayObject {
     BufferedImage load(String path) {
         System.out.println("Loading image " + path + "...");
         BufferedImage image = null;
+        File file = new File(path);
         try {
-            image = ImageIO.read(new File(path));
+            image = ImageIO.read(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
