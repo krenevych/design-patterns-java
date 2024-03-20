@@ -2,29 +2,45 @@ public class Client {
     public static void main(String[] args) {
 
         Request[] requests = {
-            new Request(Request.Type.TYPE1),
-            new Request(Request.Type.TYPE2),
-            new Request(Request.Type.TYPE1),
-            new Request(Request.Type.TYPE3),
-            new Request(Request.Type.TYPE4),
-            new Request(Request.Type.TYPE2),
-            new Request(Request.Type.TYPE4),
-            new Request(Request.Type.TYPE1),
+                new RequestType1(),
+                new RequestType2(),
+                new RequestType1(),
+                new RequestType3(),
+                new RequestType4(),
+                new RequestType2(),
+                new RequestType4(),
+                new RequestType1(),
+                new Request() {
+                    @Override
+                    public String toString() {
+                        return "BrendNewRequest" +
+                                ", id=" + getId() +
+                                '}';
+                    }
+                }
         };
 
 
-        for (Request request : requests) {
-            if (request.getType() == Request.Type.TYPE1) {
-                System.out.println("Type1: Handle request " + request);
-            } else if (request.getType() == Request.Type.TYPE2) {
-                System.out.println("Type2: Handle request " + request);
-            } else if (request.getType() == Request.Type.TYPE3) {
-                System.out.println("Type3: Handle request " + request);
-            } else if (request.getType() == Request.Type.TYPE4) {
-                System.out.println("Type4: Handle request " + request);
-            } else {
-                System.out.println("Unhandled request " + request);
+        Handler handler1 = new HandlerType1();
+        Handler handler2 = new HandlerType2();
+        Handler handler3 = new HandlerType3();
+        Handler handler4 = new HandlerType4();
+        Handler handler5 = new Handler() {
+            @Override
+            public void handle(Request request) {
+                System.out.println("New request " + request);
+                super.handle(request);
             }
+        };
+
+        handler1.setNext(handler2);
+        handler2.setNext(handler3);
+        handler3.setNext(handler4);
+        handler4.setNext(handler5);
+
+
+        for (Request request : requests) {
+            handler1.handle(request);
         }
 
 
