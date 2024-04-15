@@ -6,6 +6,7 @@ public class Client {
 
         document.publish("user");
         document.publish("user");
+        document.publish("moderator");
         document.abandon("admin");
         document.setText("Hello, World!");
         document.publish("admin");

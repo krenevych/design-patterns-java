@@ -1,36 +1,19 @@
 public class File {
 
     final private String fileName;
-
-    enum EncryptionType {
-        AES,
-        DES,
-        RSA,
-        ECC
+    private Encryption encryption;
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
     }
 
     public File(String fileName) {
         this.fileName = fileName;
     }
 
-    public void encrypt(EncryptionType encryptionType) {
-        switch (encryptionType) {
-
-            case AES:
-                System.out.println("Applying AES encryption to " + fileName);
-                break;
-            case DES:
-                System.out.println("Applying DES encryption to " + fileName);
-                break;
-            case RSA:
-                System.out.println("Applying RSA encryption to " + fileName);
-                break;
-            case ECC:
-                System.out.println("Applying ECC encryption to " + fileName);
-                break;
+    public void encrypt() {
+        if (encryption != null){
+            encryption.encrypt(fileName);
         }
-
-
     }
 
 }
