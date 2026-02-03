@@ -1,23 +1,19 @@
-package domain;
-
-import data.MSDataBase;
-
 public class MSDataBaseClient {
 
-    private final DBApi dataBase;
+    private MSDataBase dataBase;
 
-    public MSDataBaseClient(DBApi dataBase) {
+    public MSDataBaseClient(MSDataBase dataBase) {
         this.dataBase = dataBase;
     }
 
     public void work() {
         for (int i = 1; i <= 10; i++) {
             if (i % 3 == 1) {
-                dataBase.addData();
+                dataBase.addDataMS();
             } else if (i % 3 == 2) {
-                dataBase.update();
+                dataBase.updateDataMS();
             } else {
-                dataBase.getData();
+                dataBase.getDataMS();
             }
         }
     }
