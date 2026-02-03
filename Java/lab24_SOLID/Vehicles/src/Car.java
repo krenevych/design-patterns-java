@@ -1,13 +1,14 @@
-class Car extends Vehicle {
+public class Car extends Vehicle {
+
     private int numSeats = 4;
-    
-    public void setNumSeats(int numSeats) {
-        this.numSeats = numSeats;
+
+    public Car(String name) {
+        super(name);
     }
 
     @Override
     public void drive() {
-        System.out.println("Car is driving.");
+        System.out.println("Driving the car...");
     }
     
     // Інші методи класу Car
