@@ -1,6 +1,6 @@
 
 public class Bicycle extends Vehicle {
-    private int numGears; // кількість передач
+    private int numGears = 21; // кількість передач
 
     public Bicycle(String name) {
         super(name);
@@ -16,6 +16,6 @@ public class Bicycle extends Vehicle {
     }
 
     public void ride() {
-        System.out.println("Riding a bicycle...");
+        System.out.printf("Riding the bicycle (%s), number of gears=%s...\n", name, numGears);
     }
 }
